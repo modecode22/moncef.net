@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Poppins', sans-serif;}
+  
+    @keyframes jumbo {
+      from {
+          background-position: 50% 50%, 50% 50%;
+      }
+      to {
+          background-position: 350% 50%, 350% 50%;
+      }
+}
+
+.jumbo {
+    --stripes: repeating-linear-gradient(
+      100deg,
+      hsl(225, 0%, 3%) 0%,
+      hsl(225, 0%, 3%) 7%,
+      transparent 10%,
+      transparent 12%,
+      hsl(225, 0%, 3%) 16%
+    );
+    --rainbow: repeating-linear-gradient(
+        100deg,
+        #60a5fa 10%,
+        #e879f9 15%,
+        #60a5fa 20%,
+        #5eead4 25%,
+        #60a5fa 30%
+    );
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 300%, 200%;
+    background-position: 50% 50%, 50% 50%;
+
+    filter: blur(10px) opacity(50%) saturate(200%);
+
+    mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+    pointer-events: none;
+}
+
+.jumbo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 200%, 100%;
+    animation: jumbo 90s linear infinite;
+    background-attachment: fixed;
+    mix-blend-mode: difference;
+}
+
+
+
+@layer demo {
+  .highlighted-text-shadow {
+    text-shadow:
+      /* regular text-shadow */
+      0 .15ch 15px var(--shadow),
+      /* text-shadow highlight */
+      0 -2px 0 var(--highlight);
+  }
+}
+
+
+.hero-button {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: hsl(225, 0%, 50%);
+  text-shadow: none;
+  background: transparent;
+  box-shadow: transparent;
+  border: 1px solid hsl(225, 0%, 50%);
+  transition: 0.5s ease;
+  user-select: none;
+}
+.hero-secondary-button {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  text-shadow: none;
+  background: transparent;
+  box-shadow: transparent;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+.hero-button:hover {
+  color: #ffffff;
+  background: hsl(225  , 85%, 45%);
+  border: 1px solid hsl(225  , 85%, 45%);
+  text-shadow: 0 0 5px #ffffff,
+              0 0 10px #ffffff,
+              0 0 20px #ffffff;
+  box-shadow: 0 0 5px hsl(225  , 85%, 45%),
+              0 0 20px hsl(225  , 85%, 45%),
+              0 0 50px hsl(225  , 85%, 45%),
+              0 0 100px hsl(225  , 85%, 45%);
+}
