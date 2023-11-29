@@ -8,7 +8,6 @@ author_skill: a legend
 author_image: https://uploadthing.com/f/569f4b75-1887-4a6d-b753-a63f33014bee_wolf.jpg
 ---
 
-
 ## 1. Unleashing Business Excellence
 
 In the fast-paced world of business, staying ahead requires more than just hard work; it demands strategic thinking, efficient processes, and a commitment to excellence. This blog explores key habits and practices that can elevate your business game, making it not just successful but exceptional.
@@ -19,8 +18,13 @@ Setting clear goals is the foundation of any successful venture. Identify your p
 
 ## 3. Mastering Daily Routines for Business Success
 
-<BlogImage src="https://uploadthing.com/f/6ea8dc0a-6b1f-4238-a7bc-d13501b33332_pexels-dids-3753031.jpg" alt="Productivity Image" />
-Consistency is key. Develop a daily routine that aligns with your business goals. This habit helps in maintaining focus, managing time effectively, and fostering a disciplined work ethic crucial for business success.
+<BlogImage
+  src="https://uploadthing.com/f/6ea8dc0a-6b1f-4238-a7bc-d13501b33332_pexels-dids-3753031.jpg"
+  alt={"Productivity Image"}
+/>
+Consistency is key. Develop a daily routine that aligns with your business goals.
+This habit helps in maintaining focus, managing time effectively, and fostering a
+disciplined work ethic crucial for business success.
 
 ## 4. Time Blocking: A Game-Changer for Productivity
 
@@ -30,10 +34,47 @@ Time is a valuable resource, and effective time management is crucial for succes
 
 Distractions can derail even the most well-thought-out business plans. Identify and minimize distractions to maintain a productive work environment. This could include creating a dedicated workspace, using productivity tools, and establishing clear boundaries.
 
+## 6. Distraction Management: Maximizing Business Focus
+
+<CodeRenderer 
+codeBlock=
+{`import * as nodemailer from "nodemailer";
+const MY_EMAIL = import.meta.env.MY_EMAIL;
+const MY_PASSWORD = import.meta.env.MY_PASSWORD;
+
+export const sendEmail = async ({name,email,message}: {
+  name: string;
+  email: string;
+  message: string;
+}): Promise<void> => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: MY_EMAIL,
+      pass: MY_PASSWORD,
+    },
+  });
+    const mailOptions = {
+    from: MY_EMAIL,
+    to: "youEmail@gmail.com", # wirte you email address here
+    subject: \` Contact form submission from \$\{name\}\`,
+    text: Email:\` \$\{email\} Message: \$\{message\}\`,
+  };
+
+  await transporter.sendMail(mailOptions);
+`}
+language={'ts'}
+ />
+
+
+
 - Business Task Management:
   - Prioritize Tasks for Business Success
   - Streamline Business Processes
-  
+
 [This is a link](https://www.example.com)
 
 > In the ever-evolving business landscape, adaptability is the key to survival. Stay agile, embrace change, and always be ready to innovate.
