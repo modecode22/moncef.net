@@ -17,3 +17,4 @@ export function getPost( slug:string ) {
     content: content,
   };
 }
+
