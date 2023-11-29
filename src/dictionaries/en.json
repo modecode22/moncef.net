@@ -1,5 +1,26 @@
 {
   "navigation": {
-    "home": "Home"
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact Me"
+  },
+  "links":{
+    "home":"/",
+    "projects":"/projects",
+    "blog":"/blog",
+    "contact":"/contact"
+  }
+  ,
+  "blog":{
+    "writed_by":"Writed by",
+    "in":"in",
+    "read_more":"Read more"
+  }
+  ,
+  "project":{
+    "started_in":"Started in",
+    "project_link":"Project link",
+    "read_more":"Read more"
   }
 }

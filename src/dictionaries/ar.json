@@ -1,5 +1,25 @@
 {
   "navigation": {
-    "home": "الرئيسية"
+    "home": "الرئيسية",
+    "projects": "مشاريع",
+    "blog": "مدونة",
+    "contact": "إتصل بي"
+  },
+  "links":{
+    "home":"/ar",
+    "projects":"/ar/projects",
+    "blog":"/ar/blog",
+    "contact":"/ar/contact"
+  },
+  "blog":{
+    "writed_by":"كتب بيد",
+    "in":"في",
+    "read_more":"اقرأ المزيد"
+  }
+  ,
+  "project":{
+    "started_in":"كتب بيد",
+    "project_link":"رابط المشروع",
+    "read_more":"اقرأ المزيد"
   }
 }
