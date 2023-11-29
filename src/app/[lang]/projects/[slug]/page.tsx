@@ -1,18 +1,18 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { Metadata } from "next";
-import { getPost } from "@/helpers/getPost";
 import BlogImage from "@/components/BlogImage";
 import CodeRenderer from "@/components/CodeRenderer";
 import BlogProgressBar from "@/components/BlogProgressBar";
 import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
+import { getProject } from "@/helpers/getProject";
 export async function generateMetadata({
   params: { slug, lang },
 }: {
   params: { slug: string; lang: Locale };
 }) {
-  const { metadata, content } = getPost(slug);
+  const { metadata, content } = getProject(slug);
   const themetadata: Metadata = {
     description: metadata.description,
     title: metadata.title,
@@ -37,7 +37,7 @@ export async function generateMetadata({
     openGraph: {
       description: metadata.description,
       title: metadata.title,
-      url: `https://www.moncef.net/blog/${slug}`,
+      url: `https://www.moncef.net/projects/${slug}`,
       siteName: "moncef.net",
       images: [
         {
@@ -71,7 +71,7 @@ const page = async ({
 }: {
   params: { slug: string; lang: Locale };
 }) => {
-  const source = getPost(slug);
+  const source = getProject(slug);
   const { blog} = await getDictionary(source.metadata.lang);
 
   return (
