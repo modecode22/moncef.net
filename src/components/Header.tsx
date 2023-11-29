@@ -4,7 +4,7 @@ import AnimatedTabs from "./AnimatedTabs";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/Sheet";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/Button";
-import { FiMenu } from "react-icons/fi";
+import logo from '../../public/logo.svg'
 import {
   RiDiscussLine,
   RiHome2Line,
@@ -18,42 +18,48 @@ import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 
 const Header = async({ lang }: { lang: Locale }) => {
-  const { navigation } = await getDictionary(lang)
+  const { navigation , links} = await getDictionary(lang)
   const Tabs = [
     {
-      id: "/",
+      id: links.home,
       label: navigation.home,
+      originalLink: '/'    },
+    {
+      id: links.projects,
+      label: navigation.projects,
+      originalLink: '/projects'
     },
     {
-      id: "/projects",
-      label: "Projects",
+      id: links.blog,
+      label: navigation.blog,
+      originalLink: '/blog'
     },
     {
-      id: "/blog",
-      label: "Blog",
-    },
-    {
-      id: "/contact",
-      label: "Contact me",
+      id: links.contact,
+      label: navigation.contact,
+      originalLink: '/contact'
     },
   ];
   return (
     <>
       <header className="h-16 z-50  sticky top-0  px-6  sm:px-12 md:px-16 lg:px-36 bg-dark-900 border-b border-dark-700 flex justify-between items-center w-full">
+      <section className="flex gap-3">
+
         <CustomLink
           lang={lang}
           href="/"
           className="hover:bg-primary-900 rounded-full duration-75 transition-colors"
         >
           <Image
-            src="/logo.svg"
+            src={logo}
             alt="Moncef Aissaoui Letter"
             width={40}
             height={40}
           />
         </CustomLink>
-        <LocaleSwitcher />
-        <AnimatedTabs tabs={Tabs} />
+        <LocaleSwitcher lang={lang} />
+      </section>
+        <AnimatedTabs lang={lang} tabs={Tabs} />
         <h3 className="font-semibold text-lg h-full flex justify-center items-center">
           Moncef Letter
         </h3>
@@ -67,7 +73,7 @@ const Header = async({ lang }: { lang: Locale }) => {
             <RiMenuLine className="w-6 h-6" />
           </SheetTrigger>
           <SheetContent
-            side={"right"}
+            side={lang === "en"? "right" : "left"}
             className="flex lg:hidden flex-col p-3 gap-0 pt-16"
           >
             <CustomLink
@@ -76,7 +82,7 @@ const Header = async({ lang }: { lang: Locale }) => {
               href="/"
             >
               <RiHome2Line className="w-6 h-6" />
-              <span className="text-center text-xl">Home</span>
+              <span className="text-center text-xl">{navigation.home}</span>
             </CustomLink>
             <CustomLink
               lang={lang}
@@ -84,7 +90,7 @@ const Header = async({ lang }: { lang: Locale }) => {
               href="/projects"
             >
               <RiMedal2Line className="w-6 h-6" />
-              <span className="text-center text-xl">Projects</span>
+              <span className="text-center text-xl">{navigation.projects}</span>
             </CustomLink>
 
             <CustomLink
@@ -93,7 +99,7 @@ const Header = async({ lang }: { lang: Locale }) => {
               href="/blog"
             >
               <RiLightbulbFlashLine className="w-6 h-6" />
-              <span className="text-center text-xl">Blog</span>
+              <span className="text-center text-xl">{navigation.blog}</span>
             </CustomLink>
             <CustomLink
               lang={lang}
@@ -101,14 +107,11 @@ const Header = async({ lang }: { lang: Locale }) => {
               href="/contact"
             >
               <RiDiscussLine className="w-6 h-6" />
-              <span className="text-center text-xl">Contact me</span>
+              <span className="text-center text-xl">{navigation.contact}</span>
             </CustomLink>
           </SheetContent>
         </Sheet>
       </header>
-      <section className="w-full px-6  sm:px-12 md:px-16 lg:px-36">
-        <section className="h-16 bg-dark-900 border-b border-dark-700 flex justify-between items-center w-fit "></section>
-      </section>
     </>
   );
 };

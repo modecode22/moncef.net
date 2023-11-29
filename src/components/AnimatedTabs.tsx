@@ -1,21 +1,25 @@
 "use client";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import CustomLink from "./Link";
+import { Locale, i18n } from "@/i18n.config";
 type AnimatedTabsProps = {
   tabs: {
     id: string;
     label: string;
+    originalLink: string;
   }[];
+  lang:Locale
 };
 
-const AnimatedTabs = ({tabs}:AnimatedTabsProps) => {
+const AnimatedTabs = ({tabs , lang }:AnimatedTabsProps) => {
 const path = usePathname()
   return (
     <nav className=" hidden md:flex space-x-1">
       {tabs.map((tab) => (
-        <Link 
-        href={tab.id}
+        <CustomLink
+        lang={lang} 
+        href={tab.originalLink}
           key={tab.id}
           className={`${
             path === tab.id ? "" : "hover:text-white/60"
@@ -33,7 +37,7 @@ const path = usePathname()
             />
           )}
           {tab.label}
-        </Link>
+        </CustomLink>
       ))}
     </nav>
   );
