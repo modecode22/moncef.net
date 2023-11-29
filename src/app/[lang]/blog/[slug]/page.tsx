@@ -1,10 +1,10 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { Metadata } from "next";
-import { getPost } from "@/lib/helpers/getPost";
-import BlogImage from "@/components/blog/BlogImage";
-import ShareBtn from "@/components/blog/ShareBtn";
-import BlogProgressBar from "@/components/blog/BlogProgressBar";
+import { getPost } from "@/helpers/getPost";
+import BlogImage from '@/components/BlogImage'
+import CodeRenderer from '@/components/CodeRenderer'
+import BlogProgressBar from "@/components/BlogProgressBar";
 export async function generateMetadata({
   params: { slug },
 }: {
@@ -90,12 +90,12 @@ const page = async ({ params: { slug } }: { params: { slug: string } }) => {
             .
           </p>
           <section className="w-full flex justify-end">
-          <ShareBtn
+          {/* <ShareBtn
             url={slug}
             description={source.metadata.description}
             title={source.metadata.title}
             img={source.metadata.image}
-          />
+          /> */}
 
           </section>
         </div>
@@ -103,7 +103,7 @@ const page = async ({ params: { slug } }: { params: { slug: string } }) => {
         {source && (
           <MDXRemote
             source={source.content}
-            components={{ BlogImage }}
+            components={{ BlogImage,CodeRenderer }}
             options={options}
           />
         )}
