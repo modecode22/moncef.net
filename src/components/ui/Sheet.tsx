@@ -3,10 +3,9 @@
 import * as React from "react";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { cva, type VariantProps } from "class-variance-authority";
-import { RiCloseLine } from "react-icons/ri";
+import {  RiMenuLine } from "react-icons/ri";
 
 import { cn } from "@/lib/utils";
-import { FiMenu } from "react-icons/fi";
 import Image from "next/image";
 
 const Sheet = SheetPrimitive.Root;
@@ -29,7 +28,7 @@ const SheetOverlay = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Overlay
     className={cn(
-      "fixed inset-0 z-50 bg-primary-950/20 backdrop-blur-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      "fixed inset-0 z-50 bg-dark-900/20 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
       className
     )}
     {...props}
@@ -39,16 +38,16 @@ const SheetOverlay = React.forwardRef<
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
 const sheetVariants = cva(
-  "fixed z-50 gap-4 bg-dark-900  shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+  "fixed z-50 gap-4 bg-dark-900   transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
   {
     variants: {
       side: {
-        top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
+        top: "inset-x-0 top-0 border-b  data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
         bottom:
           "inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
         left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
         right:
-          "inset-y-0 right-0 h-full w-3/4 pt-16   data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
+          "inset-y-0 right-0 h-full w-3/4 pt-16 border-l border-dark-800  data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
       },
     },
     defaultVariants: {
@@ -75,11 +74,11 @@ const SheetContent = React.forwardRef<
       {children}
       <div className="absolute h-16 inset-0 border-b border-dark-700 flex justify-start items-center px-6">
         <SheetPrimitive.Close className="absolute   w-fit flex justify-center items-center   opacity-70 ring-offset-primary-900 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-primary-800 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
-          <FiMenu className="w-6 h-6" />
+          <RiMenuLine className="w-6 h-6" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>
         <span className="absolute right-6 f h-full justify-end items-center flex ">
-          <Image src="/logo.svg" alt="logo" width={100} height={100} />
+          <Image src="/logo.svg" alt="logo" width={40} height={40} />
         </span>
       </div>
     </SheetPrimitive.Content>
