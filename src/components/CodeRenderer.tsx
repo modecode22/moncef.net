@@ -111,43 +111,43 @@ const CodeRenderer = ({
   codeBlock: string;
   language: string;
 }) => {
-    const code = useRef(codeBlock);
-    const [copied, setCopied] = useState(false);
-  
-    const handleCopy = async () => {
-      try {
-        await navigator.clipboard.writeText(code.current);
-        setCopied(true);
-        setTimeout(() => {
-          setCopied(false);
-        }, 3000);
-      } catch (error) {
-        console.error('Failed to copy:', error);
-      }
-    };
+  const code = useRef(codeBlock);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(code.current);
+      setCopied(true);
+      setTimeout(() => {
+        setCopied(false);
+      }, 3000);
+    } catch (error) {
+      console.error("Failed to copy:", error);
+    }
+  };
   return (
-    <Highlight theme={MyTheme} code={codeBlock} language={language}>
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className="relative" style={style}>
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line })}>
-              {/* <span>{i + 1}</span> */}
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token })} />
-              ))}
-            </div>
-          ))}
-          <div>
-            <div
-              onClick={handleCopy}
-              className="bg-dark-900 flex justify-center items-center rounded h-7 w-7 text-dark-50 hover:text-light-900 cursor-pointer active:text-light-500 absolute top-2 right-2"
-            >       
-              {copied ? <RiCheckLine /> :<RiFileCopyLine /> }
-            </div>
-          </div>
-        </pre>
-      )}
-    </Highlight>
+    <section dir="ltr" className=" relative">
+        <div
+          onClick={handleCopy}
+          className="bg-dark-900 flex justify-center items-center rounded h-7 w-7 text-dark-50 hover:text-light-900 cursor-pointer active:text-light-500  top-2 right-2 absolute"
+        >
+          {copied ? <RiCheckLine /> : <RiFileCopyLine />}
+      </div>
+      <Highlight theme={MyTheme} code={codeBlock} language={language}>
+        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          <pre className="w-full mt-0" style={style}>
+            {tokens.map((line, i) => (
+              <div key={i} {...getLineProps({ line })}>
+                {/* <span>{i + 1}</span> */}
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token })} />
+                ))}
+              </div>
+            ))}
+          </pre>
+        )}
+      </Highlight>
+    </section>
   );
 };
 
