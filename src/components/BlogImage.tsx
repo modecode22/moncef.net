@@ -1,8 +1,9 @@
-"use client"
+import { getBase64 } from '@/lib/plaiceholder';
 import Image from 'next/image';
 import React from 'react'
 
-const BlogImage = ({src , alt}:{src:string, alt:string}) => {
+const BlogImage = async({src , alt}:{src:string, alt:string}) => {
+  const myBlurDataUrl = await getBase64(src)
   return (
     <>
       <Image
@@ -10,7 +11,7 @@ const BlogImage = ({src , alt}:{src:string, alt:string}) => {
         alt={alt}
         style={{width: '100%', height: '500px'}}
         placeholder="blur"
-        blurDataURL={src}
+        blurDataURL={myBlurDataUrl}
         width={800}
         height={500}
       />

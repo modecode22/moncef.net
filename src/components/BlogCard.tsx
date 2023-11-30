@@ -5,9 +5,11 @@ import Link from "next/link";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import CustomLink from "./Link";
 import { getDictionary } from "@/lib/dictionary";
+import { getBase64 } from "@/lib/plaiceholder";
 
 const BlogCard = async ({ data, lang }: { data: Article; lang: Locale }) => {
   const { blog} = await getDictionary(data.frontmatter.lang);
+  const myBlurDataUrl = await getBase64(data.frontmatter.image)
 
   return (
     <article
@@ -57,7 +59,7 @@ const BlogCard = async ({ data, lang }: { data: Article; lang: Locale }) => {
             alt="writer image"
             className="object-cover"
             placeholder="blur"
-            blurDataURL={data.frontmatter.image}
+            blurDataURL={myBlurDataUrl}
           />
           <div className="absolute  inset-0 w-full h-full  bg-gradient-to-r from-dark-800 via-transparent to-dark-800"></div>
         </div>
