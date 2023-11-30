@@ -4,7 +4,7 @@ import AnimatedTabs from "./AnimatedTabs";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/Sheet";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/Button";
-import logo from '../../public/logo.svg'
+import logo from "../../public/logo.svg";
 import {
   RiDiscussLine,
   RiHome2Line,
@@ -17,34 +17,33 @@ import CustomLink from "./Link";
 import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 
-const Header = async({ lang }: { lang: Locale }) => {
-  const { navigation , links} = await getDictionary(lang)
+const Header = async ({ lang }: { lang: Locale }) => {
+  const { navigation, links } = await getDictionary(lang);
   const Tabs = [
     {
       id: links.home,
       label: navigation.home,
-      originalLink: '/'    },
+      originalLink: "/",
+    },
     {
       id: links.projects,
       label: navigation.projects,
-      originalLink: '/projects'
+      originalLink: "/projects",
     },
     {
       id: links.blog,
       label: navigation.blog,
-      originalLink: '/blog'
+      originalLink: "/blog",
     },
     {
       id: links.contact,
       label: navigation.contact,
-      originalLink: '/contact'
+      originalLink: "/contact",
     },
   ];
   return (
     <>
       <header className="h-16 z-50  sticky top-0  px-6  sm:px-12 md:px-16 lg:px-36 bg-dark-900 border-b border-dark-700 flex justify-between items-center w-full">
-      <section className="flex gap-3">
-
         <CustomLink
           lang={lang}
           href="/"
@@ -57,60 +56,68 @@ const Header = async({ lang }: { lang: Locale }) => {
             height={40}
           />
         </CustomLink>
-        <LocaleSwitcher lang={lang} />
-      </section>
         <AnimatedTabs lang={lang} tabs={Tabs} />
-        <h3 className="font-semibold text-lg h-full flex justify-center items-center">
+        <h3 className="font-semibold text-lg lg:hidden w-full h-full flex justify-center items-center">
           Moncef Letter
         </h3>
-        <Sheet>
-          <SheetTrigger
-            className={cn(
-              buttonVariants({ variant: "transparent", size: "medium-square" }),
-              "flex md:hidden"
-            )}
-          >
-            <RiMenuLine className="w-6 h-6" />
-          </SheetTrigger>
-          <SheetContent
-            side={lang === "en"? "right" : "left"}
-            className="flex lg:hidden flex-col p-3 gap-0 pt-16"
-          >
-            <CustomLink
-              lang={lang}
-              className="duration-75 h-16 border-b border-dark-700 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
-              href="/"
+        <section className="flex gap-3 ">
+          <LocaleSwitcher lang={lang} />
+          <Sheet>
+            <SheetTrigger
+              className={cn(
+                buttonVariants({
+                  variant: "transparent",
+                  size: "medium-square",
+                }),
+                "flex lg:hidden"
+              )}
             >
-              <RiHome2Line className="w-6 h-6" />
-              <span className="text-center text-xl">{navigation.home}</span>
-            </CustomLink>
-            <CustomLink
-              lang={lang}
-              className="duration-75 h-16 border-b border-dark-700 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
-              href="/projects"
+              <RiMenuLine className="w-6 h-6" />
+            </SheetTrigger>
+            <SheetContent
+              side={lang === "en" ? "right" : "left"}
+              className="flex lg:hidden flex-col p-3 gap-0 pt-16"
             >
-              <RiMedal2Line className="w-6 h-6" />
-              <span className="text-center text-xl">{navigation.projects}</span>
-            </CustomLink>
+              <CustomLink
+                lang={lang}
+                className="duration-75 h-16 border-b border-dark-700 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
+                href="/"
+              >
+                <RiHome2Line className="w-6 h-6" />
+                <span className="text-center text-xl">{navigation.home}</span>
+              </CustomLink>
+              <CustomLink
+                lang={lang}
+                className="duration-75 h-16 border-b border-dark-700 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
+                href="/projects"
+              >
+                <RiMedal2Line className="w-6 h-6" />
+                <span className="text-center text-xl">
+                  {navigation.projects}
+                </span>
+              </CustomLink>
 
-            <CustomLink
-              lang={lang}
-              className="duration-75 h-16 border-b border-dark-700 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
-              href="/blog"
-            >
-              <RiLightbulbFlashLine className="w-6 h-6" />
-              <span className="text-center text-xl">{navigation.blog}</span>
-            </CustomLink>
-            <CustomLink
-              lang={lang}
-              className="duration-75 h-16 border-b border-dark-700 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
-              href="/contact"
-            >
-              <RiDiscussLine className="w-6 h-6" />
-              <span className="text-center text-xl">{navigation.contact}</span>
-            </CustomLink>
-          </SheetContent>
-        </Sheet>
+              <CustomLink
+                lang={lang}
+                className="duration-75 h-16 border-b border-dark-700 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
+                href="/blog"
+              >
+                <RiLightbulbFlashLine className="w-6 h-6" />
+                <span className="text-center text-xl">{navigation.blog}</span>
+              </CustomLink>
+              <CustomLink
+                lang={lang}
+                className="duration-75 h-16 border-b border-dark-700 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
+                href="/contact"
+              >
+                <RiDiscussLine className="w-6 h-6" />
+                <span className="text-center text-xl">
+                  {navigation.contact}
+                </span>
+              </CustomLink>
+            </SheetContent>
+          </Sheet>
+        </section>
       </header>
     </>
   );

@@ -15,7 +15,7 @@ type AnimatedTabsProps = {
 const AnimatedTabs = ({tabs , lang }:AnimatedTabsProps) => {
 const path = usePathname()
   return (
-    <nav className=" hidden md:flex space-x-1">
+    <nav className=" hidden lg:flex space-x-1">
       {tabs.map((tab) => (
         <CustomLink
         lang={lang} 
