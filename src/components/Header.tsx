@@ -57,7 +57,7 @@ const Header = async ({ lang }: { lang: Locale }) => {
           />
         </CustomLink>
         <AnimatedTabs lang={lang} tabs={Tabs} />
-        <h3 className="font-semibold text-lg lg:hidden w-full h-full flex justify-center items-center">
+        <h3 className="font-semibold text-lg lg:hidden w-full h-full hidden sm:flex justify-center items-center">
           Moncef Letter
         </h3>
         <section className="flex gap-3 ">
