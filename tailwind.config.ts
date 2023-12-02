@@ -36,7 +36,9 @@ export default {
       boxShadow: {
      },
       backgroundImage: {
-        "back-pattern": "url('../../public/pattern4.svg')",
+        "pattern-right": "url('../../public/pattern-right.svg')",
+        "pattern-left": "url('../../public/pattern-left.svg')",
+        "pattern-up": "url('../../public/pattern-up.svg')",
       },
       colors: {
         primary: {
