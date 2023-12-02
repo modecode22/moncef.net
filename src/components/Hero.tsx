@@ -6,7 +6,7 @@ import Button from "./ui/Button";
 const Hero = ({ lang }: { lang: Locale }) => {
   return (
     <>
-      <main className="flex rounded overflow-hidden flex-col  relative items-center  md:pt-20  min-h-[80vh] w-full   gap-5">
+      <main className="flex px-6 pt-10 sm:px-12 md:px-16 lg:px-36 rounded overflow-hidden flex-col  relative items-center  md:pt-20  min-h-screen w-full   gap-5">
         <section className=" z-10 relative border rounded-full px-2 border-dark-800 w-fit flex items-center gap-2">
           <div className="w-2 h-2  rounded-full bg-primary-500">
             <div className="w-2 h-2 animate-ping rounded-full bg-primary-500"></div>
@@ -44,7 +44,7 @@ const Hero = ({ lang }: { lang: Locale }) => {
         </section>
       </main>
 
-      <div className="absolute overflow-hidden inset-0 -z-10 bg-cover  h-[95vh] w-full bg-back-pattern">
+      <div className="absolute overflow-hidden inset-0 -z-10 bg-cover  h-screen w-full bg-pattern-right">
         <div className="absolute  inset-0 w-full h-full  bg-gradient-to-r from-dark-900  via-transparent to-dark-900"></div>
         <div className="absolute  inset-0 w-full h-full  bg-gradient-to-t from-dark-900  via-transparent to-dark-900"></div>
       </div>

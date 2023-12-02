@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import { Highlight, PrismTheme } from "prism-react-renderer";
 import { RiCheckLine, RiFileCopyLine } from "react-icons/ri";
+import { cn } from "@/lib/utils";
 
 const MyTheme: PrismTheme = {
   plain: {
@@ -133,14 +134,15 @@ const CodeRenderer = ({
         >
           {copied ? <RiCheckLine /> : <RiFileCopyLine />}
       </div>
-      <Highlight theme={MyTheme} code={codeBlock} language={language}>
-        {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className="w-full mt-0 font-mono" style={style}>
+      <Highlight  theme={MyTheme} code={codeBlock} language={language}>
+        {({ className,style, tokens, getLineProps, getTokenProps }) => (
+        // {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          <pre className={cn("w-full mt-0 ")} style={style}>
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line })}>
                 {/* <span>{i + 1}</span> */}
                 {line.map((token, key) => (
-                  <span key={key} {...getTokenProps({ token })} />
+                  <span  key={key} {...getTokenProps({ token })} />
                 ))}
               </div>
             ))}
