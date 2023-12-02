@@ -58,13 +58,13 @@ export default function Tooltip({ name, children, direction ,className,tooltipCl
 
   return (
     <>
-      <div className={cn('w-full',className)} ref={refs.setReference} {...getReferenceProps()}>
+      <div className={cn('',className)} ref={refs.setReference} {...getReferenceProps()}>
         {children}
       </div>
       <FloatingPortal>
         {isOpen && (
           <div
-          className={cn( "z-50 font-semibold py-[2px]  bg-gradient-to-br from-dark-950 via-dark-800 to-primary-950 border border-primary-900  text-light-50  rounded px-2", tooltipClassName)}
+          className={cn( "z-50 font-semibold py-[2px] px-3  bg-gradient-to-br from-dark-950 via-dark-800 to-primary-950 border border-primary-900  text-light-50  rounded hidden md:flex", tooltipClassName)}
           ref={refs.setFloating}
             style={floatingStyles}
             {...getFloatingProps()}
