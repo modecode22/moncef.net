@@ -1,14 +1,16 @@
 import { Locale } from "@/i18n.config";
-import { Article, Project } from "@/types/global";
+import {  Project } from "@/types/global";
 import Image from "next/image";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import CustomLink from "./Link";
 import { getDictionary } from "@/lib/dictionary";
 import Link from "next/link";
 import { RiLinksLine } from "react-icons/ri";
+import { getBase64 } from "@/lib/plaiceholder";
 
 const ProjectCard = async ({ data, lang }: { data: Project; lang: Locale }) => {
   const { project } = await getDictionary(data.frontmatter.lang);
+  const myBlurDataUrl = await getBase64(data.frontmatter.image)
   return (
     <article
       dir={data.frontmatter.lang === "ar" ? "rtl" : "ltr"}
@@ -22,18 +24,12 @@ const ProjectCard = async ({ data, lang }: { data: Project; lang: Locale }) => {
             alt="writer image"
             className="object-cover"
             placeholder="blur"
-            blurDataURL={data.frontmatter.image}
+            blurDataURL={myBlurDataUrl}
           />
           <div
-            style={{
-              background: `linear-gradient(to top right, hsl(180, 11%, 6%), transparent, ${data.frontmatter.color} )`,
-            }}
-            className={`absolute  inset-0 w-full h-full   `}
+            className={`absolute  inset-0 w-full h-full  bg-gradient-to-t from-dark-800 via-transparent to-dark-800  `}
           ></div>
           <div
-            style={{
-              background: `linear-gradient(to top, hsl(180, 11%, 6%), transparent, transparent )`,
-            }}
             className={`absolute  inset-0 w-full h-full   `}
           ></div>
         </div>
@@ -51,7 +47,7 @@ const ProjectCard = async ({ data, lang }: { data: Project; lang: Locale }) => {
         </header>
         <footer className="w-full flex flex-col  justify-between pt-3  ">
           <span className="text-[0.6rem] text-light-900">
-            {project.started_in} {data.frontmatter.date}
+            {project.started_in} <span className="text-primary-500">{data.frontmatter.date}</span>
           </span>
           <section className="w-full flex  justify-between">
             <CustomLink
