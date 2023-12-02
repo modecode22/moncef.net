@@ -7,7 +7,7 @@ export default {
     borderRadius: {
       none: "0",
       sm: "0.125rem",
-      DEFAULT: "6px",
+      DEFAULT: "25px",
       md: "0.375rem",
       lg: "0.5rem",
       xl: "0.75rem",
@@ -36,7 +36,7 @@ export default {
       boxShadow: {
      },
       backgroundImage: {
-        "back-pattern": "url('../../public/pattern2.svg')",
+        "back-pattern": "url('../../public/pattern4.svg')",
       },
       colors: {
         primary: {
@@ -66,16 +66,16 @@ export default {
           950: "hsl(180, 0%, 30%)",
         },
         dark: {
-          50: "hsl(180, 11%, 28%)",
-          100: "hsl(180, 11%, 22%)",
-          200: "hsl(180, 11%, 18%)",
-          300: "hsl(180, 11%, 16%)",
-          400: "hsl(180, 11%, 14%)",
-          500: "hsl(180, 11%, 12%)",
-          600: "hsl(180, 11%, 10%)",
-          700: "hsl(180, 11%, 8%)",
-          800: "hsl(180, 11%, 6%)",
-          900: "hsl(180, 11%, 4%)",
+          50:  "hsl(180, 11%, 29%)",
+          100: "hsl(180, 11%, 23%)",
+          200: "hsl(180, 11%, 19%)",
+          300: "hsl(180, 11%, 15%)",
+          400: "hsl(180, 11%, 13%)",
+          500: "hsl(180, 11%, 11%)",
+          600: "hsl(180, 11%, 9%)",
+          700: "hsl(180, 11%, 7%)",
+          800: "hsl(180, 11%, 4%)",
+          900: "hsl(180, 11%, 3%)",
           950: "hsl(180, 11%, 2%)",
         },
         error: {
