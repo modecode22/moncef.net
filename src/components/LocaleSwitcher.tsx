@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import { RiGlobalLine } from "react-icons/ri";
 import { Locale, i18n } from "@/i18n.config";
 
 const LocaleSwitcher = ({ lang }: { lang: Locale }) => {
@@ -39,16 +39,19 @@ const LocaleSwitcher = ({ lang }: { lang: Locale }) => {
       {lang === "en" ? (
         <Link
           href={redirectedPathName('ar')}
-          className="border rounded-full border-dark-800   text-light-900 hover:bg-dark-800 w-9 h-9 flex justify-center items-center hover:border-dark-700 hover:text-light-50 duration-75 transition-all"
+          className="border gap-1 rounded border-dark-800   text-light-900 hover:bg-dark-800  flex justify-center items-center px-2 py-1  hover:border-dark-700 hover:text-light-50 duration-75 transition-all"
         >
-          {'ar'}
+          <RiGlobalLine />
+          {'AR'}
+
         </Link>
       ) : (
         <Link
           href={redirectedPathName('en')}
-          className="border rounded-full border-dark-800   text-light-900 hover:bg-dark-800 w-9 h-9 flex justify-center items-center hover:border-dark-700 hover:text-light-50 duration-75 transition-all"
+          className="border gap-1 relative rounded border-dark-800   text-light-900 hover:bg-dark-800  flex justify-center items-center px-2 py-1  hover:border-dark-700 hover:text-light-50 duration-75 transition-all"
         >
-          {"en"}
+          {"EN"}
+          <RiGlobalLine />
         </Link>
       )}
 
