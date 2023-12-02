@@ -43,7 +43,7 @@ const Header = async ({ lang }: { lang: Locale }) => {
   ];
   return (
     <>
-      <header className="h-16 z-50  sticky top-0  px-6  sm:px-12 md:px-16 lg:px-36 bg-dark-900 border-b border-dark-700 flex justify-between items-center w-full">
+      <header className="h-16 z-50  sticky top-0  px-6  sm:px-12 md:px-16 lg:px-36 bg-dark-900 border-b border-dark-800 flex justify-between  items-center w-full">
         <CustomLink
           lang={lang}
           href="/"
@@ -57,10 +57,8 @@ const Header = async ({ lang }: { lang: Locale }) => {
           />
         </CustomLink>
         <AnimatedTabs lang={lang} tabs={Tabs} />
-        <h3 className="font-semibold text-lg lg:hidden w-full h-full hidden sm:flex justify-center items-center">
-          Moncef Letter
-        </h3>
-        <section className="flex gap-3 ">
+
+        <section className="flex items-center justify-center gap-3 ">
           <LocaleSwitcher lang={lang} />
           <Sheet>
             <SheetTrigger
@@ -80,7 +78,7 @@ const Header = async ({ lang }: { lang: Locale }) => {
             >
               <CustomLink
                 lang={lang}
-                className="duration-75 h-16 border-b border-dark-700 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
+                className="duration-75 h-16 border-b border-dark-800 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
                 href="/"
               >
                 <RiHome2Line className="w-6 h-6" />
@@ -88,7 +86,7 @@ const Header = async ({ lang }: { lang: Locale }) => {
               </CustomLink>
               <CustomLink
                 lang={lang}
-                className="duration-75 h-16 border-b border-dark-700 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
+                className="duration-75 h-16 border-b border-dark-800 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
                 href="/projects"
               >
                 <RiMedal2Line className="w-6 h-6" />
@@ -99,7 +97,7 @@ const Header = async ({ lang }: { lang: Locale }) => {
 
               <CustomLink
                 lang={lang}
-                className="duration-75 h-16 border-b border-dark-700 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
+                className="duration-75 h-16 border-b border-dark-800 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
                 href="/blog"
               >
                 <RiLightbulbFlashLine className="w-6 h-6" />
@@ -107,7 +105,7 @@ const Header = async ({ lang }: { lang: Locale }) => {
               </CustomLink>
               <CustomLink
                 lang={lang}
-                className="duration-75 h-16 border-b border-dark-700 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
+                className="duration-75 h-16 border-b border-dark-800 flex text-lg  px-3 gap-3 items-center   transition-all text-light-700 hover:text-light-50"
                 href="/contact"
               >
                 <RiDiscussLine className="w-6 h-6" />
