@@ -135,7 +135,7 @@ const CodeRenderer = ({
       </div>
       <Highlight theme={MyTheme} code={codeBlock} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className="w-full mt-0" style={style}>
+          <pre className="w-full mt-0 font-mono" style={style}>
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line })}>
                 {/* <span>{i + 1}</span> */}
