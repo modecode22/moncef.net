@@ -36,9 +36,9 @@ export default function RootLayout({
         }`}
       >
         <Header lang={lang} />
-        <main className="px-6 pt-10 sm:px-12 md:px-16 lg:px-36">
+        {/* <main className="px-6 pt-10 sm:px-12 md:px-16 lg:px-36"> */}
           {children}
-        </main>
+        {/* </main> */}
         <Footer lang={lang} />
       </body>
     </html>

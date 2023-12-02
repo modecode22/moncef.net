@@ -12,12 +12,19 @@
     "contact":"/ar/contact"
   },
   "blog":{
+    "this_blog_not_found":{
+      "message":  "للأسف لا يوجد مقال هنا اذا أردت قراءة مقالاتي"
+    } ,
     "writed_by":"كتب بيد",
     "in":"في",
     "read_more":"اقرأ المزيد"
-  }
+  },
+  "click_here": "إضغط هنا"
   ,
   "project":{
+    "this_project_not_found":{
+      "message": "للأسف لا يوجد مشروع هنا اذا أردت رؤية مشاريعي"
+    } ,
     "started_in":"كتب بيد",
     "project_link":"رابط المشروع",
     "read_more":"اقرأ المزيد"

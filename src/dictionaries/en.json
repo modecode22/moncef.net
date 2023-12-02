@@ -13,12 +13,19 @@
   }
   ,
   "blog":{
+    "this_blog_not_found":{
+      "message": "Sorry, There is no blogs here , is you want to see my other blogs "
+    } ,
     "writed_by":"Writed by",
     "in":"in",
     "read_more":"Read more"
-  }
+  },
+  "click_here": "Click here"
   ,
   "project":{
+    "this_project_not_found":{
+      "message": "Sorry, There is no project here , if you want to see my projects "
+    } ,
     "started_in":"Started in",
     "project_link":"Project link",
     "read_more":"Read more"
