@@ -31,12 +31,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
         </Link>
       </p>
 
-      <div className="flex space-x-4 mt-4">
-        <Link href="#" className="text-primary-500 hover:underline"></Link>
-        <Link href="#" className="text-primary-500 hover:underline"></Link>
-        <Link href="#" className="text-primary-500 hover:underline"></Link>
-        <Link href="#" className="text-primary-500 hover:underline"></Link>
-      </div>
+
     </section>
   );
 };

@@ -19,7 +19,7 @@ const Skills =async ({ lang }: { lang: Locale }) => {
       <main className="w-full flex flex-wrap gap-2 max-w-2xl">
         {skills.map((skill) => {
           return (
-            <div className="w-16 h-16 hover:bg-dark-700 flex justify-center items-center bg-dark-800 rounded">
+            <div key={skill.name} className="w-16 h-16 hover:bg-dark-700 flex justify-center items-center bg-dark-800 rounded">
               <Tooltip direction="bottom" name={skill.name}>
                 <Image
                   src={skill.filename}
