@@ -2,8 +2,12 @@ import React from "react";
 import CustomLink from "./Link";
 import { Locale } from "@/i18n.config";
 import Button from "./ui/Button";
+import { getDictionary } from "@/lib/dictionary";
 
-const Hero = ({ lang }: { lang: Locale }) => {
+const Hero = async ({ lang }: { lang: Locale }) => {
+  const {
+    hero: { cta , line_1 , line_2 , line_3 , line_4 , line_5 },
+  } = await getDictionary(lang);
   return (
     <>
       <main className="flex px-6 pt-10 sm:px-12 md:px-16 lg:px-36 rounded overflow-hidden flex-col  relative items-center  md:pt-20  min-h-screen w-full   gap-5">
@@ -12,35 +16,31 @@ const Hero = ({ lang }: { lang: Locale }) => {
             <div className="w-2 h-2 animate-ping rounded-full bg-primary-500"></div>
           </div>
           <p>
-            Explore my recent blog posts{" "}
+          {line_1.explore}{' '}
             <CustomLink
               className="text-primary-500 hover:underline hover:text-primary-400 duration-75 transition-all"
               href="/blog"
               lang={lang}
             >
-              here
+              {line_1.here}
             </CustomLink>
           </p>
         </section>
         <h1 className="z-10 relative text-5xl md:whitespace-nowrap  sm:text-6xl lg:text-7xl text-center font-bold">
-          Full-Stack Developer <strong className="text-primary-500">,</strong>
+          {line_2} 
         </h1>
         <h1 className="z-10 relative text-4xl sm:text-5xl lg:text-6xl text-center font-bold">
-          Startup Enthusiast <strong className="text-primary-500">,</strong>
+        {line_3} 
         </h1>
         <h1 className="z-10 relative text-4xl sm:text-5xl lg:text-6xl text-center font-bold">
-          Reader
+        {line_4}
         </h1>
         <p className="z-10 relative max-w-xl md:text-base text-sm text-light-800 text-center">
-          Welcome! I'm Moncef Aissaoui, a full-stack developer from Algeria. I
-          love building new things and facing new challenges every day. My
-          passions include building startups, reading, and blogging. Join me on
-          my journey towards achieving my goals as I share insights on this
-          website.
+        {line_5}
         </p>
         <section className="flex gap-4 z-10 relative">
-          <Button variant={"primary-solid"}>What I built ?</Button>
-          <Button variant={"dark-ghost"}>what's my Skills ?</Button>
+          <Button variant={"primary-solid"}>{cta.what_i_built}</Button>
+          <Button variant={"dark-ghost"}>{cta.whats_my_skills}</Button>
         </section>
       </main>
 

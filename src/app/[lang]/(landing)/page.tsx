@@ -1,3 +1,4 @@
+import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import CustomLink from "@/components/Link";
 import Projects from "@/components/Projects";
@@ -16,6 +17,7 @@ export default function Home({
       <Hero lang={lang} />
       <Skills lang={lang} />
       <Projects lang={lang} />
+      <Contact lang={lang} />
     </main>
   );
 }

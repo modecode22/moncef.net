@@ -5,6 +5,7 @@ import path from "path";
 import React from "react";
 import fs from "fs";
 import ProjectCard from "./ProjectCard";
+import { getDictionary } from "@/lib/dictionary";
 
 const Projects = async ({ lang }: { lang: Locale }) => {
   const mdDirectory = path.join(process.cwd(), "public");
@@ -24,10 +25,13 @@ const Projects = async ({ lang }: { lang: Locale }) => {
   const langPosts = posts.filter(
     (post) => post.frontmatter.lang === lang
   ) as Project[];
+  const {
+    project: { title },
+  } = await getDictionary(lang);
   return (
     <section className="w-full min-h-screen relative  flex justify-center items-center">
       <main className="px-6 pt-20 sm:px-12 md:px-16 lg:px-36 ">
-        <h1 className="w-full text-center text-4xl ">A Glimpse into My Recent Projects</h1>
+        <h1 className="w-full text-center text-4xl ">{title}</h1>
         <main className="flex pt-10 justify-center flex-wrap py-6   gap-12 w-full  ">
           {langPosts.map((data) => {
             return <ProjectCard lang={lang} key={data.slug} data={data} />;

@@ -5,28 +5,64 @@
     "blog": "مدونة",
     "contact": "إتصل بي"
   },
-  "links":{
-    "home":"/ar",
-    "projects":"/ar/projects",
-    "blog":"/ar/blog",
-    "contact":"/ar/contact"
+  "links": {
+    "home": "/ar",
+    "projects": "/ar/projects",
+    "blog": "/ar/blog",
+    "contact": "/ar/contact"
   },
-  "blog":{
-    "this_blog_not_found":{
-      "message":  "للأسف لا يوجد مقال هنا اذا أردت قراءة مقالاتي"
-    } ,
-    "writed_by":"كتب بيد",
-    "in":"في",
-    "read_more":"اقرأ المزيد"
+  "blog": {
+    "this_blog_not_found": {
+      "message": "للأسف لا يوجد مقال هنا اذا أردت قراءة مقالاتي"
+    },
+    "writed_by": "كتب بيد",
+    "in": "في",
+    "read_more": "اقرأ المزيد"
   },
-  "click_here": "إضغط هنا"
-  ,
-  "project":{
-    "this_project_not_found":{
+  "click_here": "إضغط هنا",
+  "project": {
+    "title":"نظرة سريعة على مشاريعي الأخيرة",
+    "this_project_not_found": {
       "message": "للأسف لا يوجد مشروع هنا اذا أردت رؤية مشاريعي"
-    } ,
-    "started_in":"كتب بيد",
-    "project_link":"رابط المشروع",
-    "read_more":"اقرأ المزيد"
+    },
+    "started_in": "كتب بيد",
+    "project_link": "رابط المشروع",
+    "read_more": "اقرأ المزيد"
+  },
+  "hero": {
+    "line_1": {
+      "explore": "اكتشف أحدث منشورات مدونتي",
+      "here": "من هنا"
+    },
+    "line_2": "Full-Stack Developer",
+    "line_3": "عاشق للشركات الناشئة",
+    "line_4": "قارئ",
+    "line_5": "مرحبا! أنا منصف عيساوي، Full-Stack Developer من الجزائر. أحب بناء أشياء جديدة ومواجهة تحديات جديدة كل يوم. يشمل شغفي بناء الشركات الناشئة والقراءة والتدوين. انضم إلي في رحلتي لتحقيق أهدافي وأنا أشارك رؤى على هذا الموقع.",
+    "cta": {
+      "what_i_built": "ماذا بنيت؟",
+      "whats_my_skills": "ما هي مهاراتي؟"
+    }
+  },
+  "skills": {
+    "line_1": "أنا بارع في",
+    "line_2": {
+      "quick_tip": "نصيحة سريعة",
+      "you_can_": "يمكنك تحريك مؤشر الفأرة فوق المهارة في",
+      "pc": "الحاسوب",
+      "to_": "لقراءة اسمها"
+    }
+  },
+  "contact": {
+    "title": "تواصل معي",
+    "email_title": "لا تتردد في إرسال بريد إلكتروني لي على:",
+    "phone_title": "يمكنك أيضًا الوصول إلي عبر الهاتف على:" },
+  "footer":{
+    "navigation": {
+      "home": "الرئيسية",
+      "projects": "المشاريع",
+      "blog": "مدونة",
+      "contact": "اتصل بي"
+    },
+    "copyright": "© 2023 - منصف عيساوي. جميع الحقوق محفوظة."
   }
 }
