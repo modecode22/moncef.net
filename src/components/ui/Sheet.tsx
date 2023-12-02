@@ -72,7 +72,7 @@ const SheetContent = React.forwardRef<
       {...props}
     >
       {children}
-      <div className="absolute h-16 inset-0 border-b border-dark-700 flex justify-start items-center px-6">
+      <div className="absolute h-16 inset-0 border-b border-dark-800 flex justify-start items-center px-6">
         <SheetPrimitive.Close className="absolute   w-fit flex justify-center items-center   opacity-70 ring-offset-primary-900 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-primary-800 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
           <RiMenuLine className="w-6 h-6" />
           <span className="sr-only">Close</span>
