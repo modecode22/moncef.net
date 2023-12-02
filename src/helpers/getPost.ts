@@ -1,20 +1,28 @@
 import matter from "gray-matter";
 import fs from 'fs';
 import path from "path";
+import { Locale } from "@/i18n.config";
 
-export function getPost( slug:string ) {
-  const mdDirectory = path.join(process.cwd(), "public");
-  const markdownFile = fs.readFileSync(
-    mdDirectory + `/posts/${slug}.mdx`,
-    "utf-8"
-  );
+export function getPost(slug: string, lang: Locale) {
+  try {
+    const mdDirectory = path.join(process.cwd(), "public");
+    const filePath = path.join(mdDirectory, "posts", lang, `${slug}.mdx`);
 
-  const { data: frontMatter, content } = matter(markdownFile);
+    if (!fs.existsSync(filePath)) {
+      console.error(`File not found: ${filePath}`);
+      return null;
+    }
 
-  return {
-    slug:slug,
-    metadata: frontMatter,
-    content: content,
-  };
+    const markdownFile = fs.readFileSync(filePath, "utf-8");
+    const { data: frontMatter, content } = matter(markdownFile);
+
+    return {
+      slug: slug,
+      metadata: frontMatter,
+      content: content,
+    };
+  } catch (error: any) {
+    console.error(`Error in getPost for slug '${slug}' and lang '${lang}': ${error.message}`);
+    return null; // or throw error; depending on how you want to handle other errors
+  }
 }
-

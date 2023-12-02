@@ -1,18 +1,28 @@
 import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
-export function getProject(slug: string) {
-  const mdDirectory = path.join(process.cwd(), "public");
-  const markdownFile = fs.readFileSync(
-    mdDirectory + `/projects/${slug}.mdx`,
-    "utf-8"
-  );
+import { Locale } from "@/i18n.config";
 
-  const { data: frontMatter, content } = matter(markdownFile);
+export function getProject(slug: string, lang: Locale) {
+  try {
+    const mdDirectory = path.join(process.cwd(), "public");
+    const filePath = path.join(mdDirectory, "projects", lang, `${slug}.mdx`);
 
-  return {
-    slug: slug,
-    metadata: frontMatter,
-    content: content,
-  };
+    if (!fs.existsSync(filePath)) {
+      console.error(`File not found: ${filePath}`);
+      return null;
+    }
+
+    const markdownFile = fs.readFileSync(filePath, "utf-8");
+    const { data: frontMatter, content } = matter(markdownFile);
+
+    return {
+      slug: slug,
+      metadata: frontMatter,
+      content: content,
+    };
+  } catch (error: any) {
+    console.error(`Error in getProject for slug '${slug}' and lang '${lang}': ${error.message}`);
+    return null; // or throw error; depending on how you want to handle other errors
+  }
 }
