@@ -7,17 +7,21 @@ import CustomLink from "./Link";
 const ErrorUi = async ({
   message,
   lang,
-  link
+  link,
 }: {
   message: string;
   lang: Locale;
-  link:string
+  link: string;
 }) => {
   const { click_here } = await getDictionary(lang);
   return (
     <main className="min-h-screen w-full flex-col flex  items-center">
       <h1 className="text-6xl">{message}</h1>
-      <CustomLink className="text-5xl mt-5 text-primary-500 hover:underline" lang={lang} href={link}>
+      <CustomLink
+        className="text-5xl mt-5 text-primary-500 hover:underline"
+        lang={lang}
+        href={link}
+      >
         {click_here}
       </CustomLink>
     </main>

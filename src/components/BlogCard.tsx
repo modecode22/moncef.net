@@ -8,8 +8,8 @@ import { getDictionary } from "@/lib/dictionary";
 import { getBase64 } from "@/lib/plaiceholder";
 
 const BlogCard = async ({ data, lang }: { data: Article; lang: Locale }) => {
-  const { blog} = await getDictionary(data.frontmatter.lang);
-  const myBlurDataUrl = await getBase64(data.frontmatter.image)
+  const { blog } = await getDictionary(data.frontmatter.lang);
+  const myBlurDataUrl = await getBase64(data.frontmatter.image);
 
   return (
     <article
@@ -25,13 +25,13 @@ const BlogCard = async ({ data, lang }: { data: Article; lang: Locale }) => {
         <section className="w-full flex justify-end"></section>
         <footer className="w-full flex flex-col  justify-between p-3 ">
           <p className="text-xs font-light text-light-900">
-            {blog.writed_by}{' '}
+            {blog.writed_by}{" "}
             <span className="text-primary-500 font-bold">
               {data.frontmatter.author}{" "}
             </span>
           </p>
           <span className="text-[0.6rem] text-light-900">
-          {blog.in} {data.frontmatter.date}
+            {blog.in} {data.frontmatter.date}
           </span>
           <section className="w-full flex ">
             <CustomLink

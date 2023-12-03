@@ -29,10 +29,13 @@ const Projects = async ({ lang }: { lang: Locale }) => {
     project: { title },
   } = await getDictionary(lang);
   return (
-    <section  className="w-full min-h-screen relative  flex justify-center items-center">
-      <main  className="px-6 pt-20 sm:px-12 md:px-16 lg:px-36 ">
+    <section className="w-full min-h-screen relative  flex justify-center items-center">
+      <main className="px-6 pt-20 sm:px-12 md:px-16 lg:px-36 ">
         <h1 className="w-full text-center text-4xl ">{title}</h1>
-        <main id="#projects" className="flex pt-10 justify-center flex-wrap py-6   gap-12 w-full  ">
+        <main
+          id="#projects"
+          className="flex pt-10 justify-center flex-wrap py-6   gap-12 w-full  "
+        >
           {langPosts.map((data) => {
             return <ProjectCard lang={lang} key={data.slug} data={data} />;
           })}

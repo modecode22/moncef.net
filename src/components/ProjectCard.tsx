@@ -1,5 +1,5 @@
 import { Locale } from "@/i18n.config";
-import {  Project } from "@/types/global";
+import { Project } from "@/types/global";
 import Image from "next/image";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import CustomLink from "./Link";
@@ -10,7 +10,7 @@ import { getBase64 } from "@/lib/plaiceholder";
 
 const ProjectCard = async ({ data, lang }: { data: Project; lang: Locale }) => {
   const { project } = await getDictionary(data.frontmatter.lang);
-  const myBlurDataUrl = await getBase64(data.frontmatter.image)
+  const myBlurDataUrl = await getBase64(data.frontmatter.image);
   return (
     <article
       dir={data.frontmatter.lang === "ar" ? "rtl" : "ltr"}
@@ -29,9 +29,7 @@ const ProjectCard = async ({ data, lang }: { data: Project; lang: Locale }) => {
           <div
             className={`absolute  inset-0 w-full h-full  bg-gradient-to-t from-dark-800 via-transparent to-dark-800  `}
           ></div>
-          <div
-            className={`absolute  inset-0 w-full h-full   `}
-          ></div>
+          <div className={`absolute  inset-0 w-full h-full   `}></div>
         </div>
       </main>
       <main className="p-3 h-full flex flex-col justify-between min-w-[50%]">
@@ -47,7 +45,8 @@ const ProjectCard = async ({ data, lang }: { data: Project; lang: Locale }) => {
         </header>
         <footer className="w-full flex flex-col  justify-between pt-3  ">
           <span className="text-[0.6rem] text-light-900">
-            {project.started_in} <span className="text-primary-500">{data.frontmatter.date}</span>
+            {project.started_in}{" "}
+            <span className="text-primary-500">{data.frontmatter.date}</span>
           </span>
           <section className="w-full flex  justify-between">
             <CustomLink

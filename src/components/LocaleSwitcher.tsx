@@ -38,23 +38,21 @@ const LocaleSwitcher = ({ lang }: { lang: Locale }) => {
     <>
       {lang === "en" ? (
         <Link
-          href={redirectedPathName('ar')}
+          href={redirectedPathName("ar")}
           className="border gap-1 rounded border-dark-800   text-light-900 hover:bg-dark-800  flex justify-center items-center px-2 py-1  hover:border-dark-700 hover:text-light-50 duration-75 transition-all"
         >
           <RiGlobalLine />
-          {'AR'}
-
+          {"AR"}
         </Link>
       ) : (
         <Link
-          href={redirectedPathName('en')}
+          href={redirectedPathName("en")}
           className="border gap-1 relative rounded border-dark-800   text-light-900 hover:bg-dark-800  flex justify-center items-center px-2 py-1  hover:border-dark-700 hover:text-light-50 duration-75 transition-all"
         >
           {"EN"}
           <RiGlobalLine />
         </Link>
       )}
-
     </>
   );
 };

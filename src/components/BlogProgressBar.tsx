@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import { motion, useScroll } from "framer-motion";
 
 const BlogProgressBar = () => {
-       const { scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll();
 
   return (
     <>
@@ -12,6 +12,6 @@ const BlogProgressBar = () => {
       />
     </>
   );
-}
+};
 
-export default BlogProgressBar
+export default BlogProgressBar;

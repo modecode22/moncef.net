@@ -9,17 +9,17 @@ type AnimatedTabsProps = {
     label: string;
     originalLink: string;
   }[];
-  lang:Locale
+  lang: Locale;
 };
 
-const AnimatedTabs = ({tabs , lang }:AnimatedTabsProps) => {
-const path = usePathname()
+const AnimatedTabs = ({ tabs, lang }: AnimatedTabsProps) => {
+  const path = usePathname();
   return (
     <nav className=" hidden lg:flex space-x-1">
       {tabs.map((tab) => (
         <CustomLink
-        lang={lang} 
-        href={tab.originalLink}
+          lang={lang}
+          href={tab.originalLink}
           key={tab.id}
           className={`${
             path === tab.id ? "" : "hover:text-white/60"

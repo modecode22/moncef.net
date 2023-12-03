@@ -128,21 +128,21 @@ const CodeRenderer = ({
   };
   return (
     <section dir="ltr" className=" relative">
-        <div
-          onClick={handleCopy}
-          className="bg-dark-900 flex justify-center items-center rounded h-7 w-7 text-dark-50 hover:text-light-900 cursor-pointer active:text-light-500  top-2 right-2 absolute"
-        >
-          {copied ? <RiCheckLine /> : <RiFileCopyLine />}
+      <div
+        onClick={handleCopy}
+        className="bg-dark-900 flex justify-center items-center rounded h-7 w-7 text-dark-50 hover:text-light-900 cursor-pointer active:text-light-500  top-2 right-2 absolute"
+      >
+        {copied ? <RiCheckLine /> : <RiFileCopyLine />}
       </div>
-      <Highlight  theme={MyTheme} code={codeBlock} language={language}>
-        {({ className,style, tokens, getLineProps, getTokenProps }) => (
-        // {({ className, style, tokens, getLineProps, getTokenProps }) => (
+      <Highlight theme={MyTheme} code={codeBlock} language={language}>
+        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          // {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={cn("w-full mt-0 ")} style={style}>
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line })}>
                 {/* <span>{i + 1}</span> */}
                 {line.map((token, key) => (
-                  <span  key={key} {...getTokenProps({ token })} />
+                  <span key={key} {...getTokenProps({ token })} />
                 ))}
               </div>
             ))}

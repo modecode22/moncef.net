@@ -1,15 +1,15 @@
-import { getBase64 } from '@/lib/plaiceholder';
-import Image from 'next/image';
-import React from 'react'
+import { getBase64 } from "@/lib/plaiceholder";
+import Image from "next/image";
+import React from "react";
 
-const BlogImage = async({src , alt}:{src:string, alt:string}) => {
-  const myBlurDataUrl = await getBase64(src)
+const BlogImage = async ({ src, alt }: { src: string; alt: string }) => {
+  const myBlurDataUrl = await getBase64(src);
   return (
     <>
       <Image
         src={src}
         alt={alt}
-        style={{width: '100%', height: '500px'}}
+        style={{ width: "100%", height: "500px" }}
         placeholder="blur"
         blurDataURL={myBlurDataUrl}
         width={800}
@@ -17,6 +17,6 @@ const BlogImage = async({src , alt}:{src:string, alt:string}) => {
       />
     </>
   );
-}
+};
 
-export default BlogImage
+export default BlogImage;

@@ -4,28 +4,25 @@ import Image from "next/image";
 import React, { HTMLAttributes } from "react";
 import Marquee from "react-fast-marquee";
 
-export const lineVariants = cva(
-  "",
-  {
-    variants: {
-      variant: {
-        normal: "",
-        "top-to-bottom": "rotate-3",
-        "bottom-to-top": "-rotate-3",
-      },
+export const lineVariants = cva("", {
+  variants: {
+    variant: {
+      normal: "",
+      "top-to-bottom": "rotate-3",
+      "bottom-to-top": "-rotate-3",
     },
-    defaultVariants: {
-      variant: "normal",
-    },
-  }
-);
+  },
+  defaultVariants: {
+    variant: "normal",
+  },
+});
 
 interface LineProps
   extends HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof lineVariants> {
-        direction?: "left" | "right" | "up" | "down" | undefined;
-    }
-const Line = ({ variant, className,direction, ...props }:LineProps) => {
+  direction?: "left" | "right" | "up" | "down" | undefined;
+}
+const Line = ({ variant, className, direction, ...props }: LineProps) => {
   return (
     <div {...props} className={cn("", lineVariants({ variant }), className)}>
       <Marquee

@@ -61,7 +61,7 @@ const Header = async ({ lang }: { lang: Locale }) => {
 
         <section className="flex items-center justify-center gap-3 ">
           <LocaleSwitcher lang={lang} />
-        <SideBar lang={lang} navigation={navigation} />
+          <SideBar lang={lang} navigation={navigation} />
         </section>
       </header>
     </>

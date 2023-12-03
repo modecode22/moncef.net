@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 const Hero = async ({ lang }: { lang: Locale }) => {
   const {
-    hero: { cta , line_1 , line_2 , line_3 , line_4 , line_5 },
+    hero: { cta, line_1, line_2, line_3, line_4, line_5 },
   } = await getDictionary(lang);
   return (
     <>
@@ -18,7 +18,7 @@ const Hero = async ({ lang }: { lang: Locale }) => {
             <div className="w-2 h-2 animate-ping rounded-full bg-primary-500"></div>
           </div>
           <p>
-          {line_1.explore}{' '}
+            {line_1.explore}{" "}
             <CustomLink
               className="text-primary-500 hover:underline hover:text-primary-400 duration-75 transition-all"
               href="/blog"
@@ -29,20 +29,31 @@ const Hero = async ({ lang }: { lang: Locale }) => {
           </p>
         </section>
         <h1 className="z-10 relative text-5xl md:whitespace-nowrap  sm:text-6xl lg:text-7xl text-center font-bold">
-          {line_2} 
+          {line_2}
         </h1>
         <h1 className="z-10 relative text-4xl sm:text-5xl lg:text-6xl text-center font-bold">
-        {line_3} 
+          {line_3}
         </h1>
         <h1 className="z-10 relative text-4xl sm:text-5xl lg:text-6xl text-center font-bold">
-        {line_4}
+          {line_4}
         </h1>
         <p className="z-10 relative max-w-xl md:text-base text-sm text-light-800 text-center">
-        {line_5}
+          {line_5}
         </p>
         <section className="flex gap-4 z-10 relative">
-          <CustomLink lang={lang} href={'/projects'} className={cn(buttonVariants({variant:"primary-solid"}))}>{cta.what_i_built}</CustomLink>
-          <Link href={'#skills'} className={cn(buttonVariants({variant:"dark-ghost"}))}>{cta.whats_my_skills}</Link>
+          <CustomLink
+            lang={lang}
+            href={"/projects"}
+            className={cn(buttonVariants({ variant: "primary-solid" }))}
+          >
+            {cta.what_i_built}
+          </CustomLink>
+          <Link
+            href={"#skills"}
+            className={cn(buttonVariants({ variant: "dark-ghost" }))}
+          >
+            {cta.whats_my_skills}
+          </Link>
         </section>
       </main>
 
