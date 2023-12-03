@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Moncef.net Portfolio
+
+Welcome to my cool portfolio! 🚀 In this project, I've leveraged the power of Next.js 14, Tailwind CSS, TypeScript, and MDX to build a sleek and modern portfolio website. Explore my recent blogs, learn about internationalization (I18) in Next.js, discover how to create MDX blogs with a custom blur placeholder image component, and enjoy custom code blocks.
+
+## Features
+
+- **Next.js 14:** Utilizing the latest features of Next.js for a fast and optimized web experience.
+- **Tailwind CSS:** A utility-first CSS framework for building responsive and stylish user interfaces.
+- **TypeScript:** Enhancing code maintainability and providing a more robust development experience.
+- **MDX Blogs:** Creating dynamic and interactive blogs using MDX, with a custom blur placeholder image component.
+- **Internationalization (I18) in Next.js:** Learn how to implement multi-language support in your Next.js application.
 
 ## Getting Started
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/modecode22/moncef.net.git
+   ```
+2. **Install Dependencies:**
+   ```bash
+   pnpm i 
+   ```
+3. **Run the Development Server:**
+   ```bash
+   pnpm dev
+   ```
+## Explore and Customize
+1. Open your browser and go to [http://localhost:3000](http://localhost:3000) to see the portfolio.
+2. Start tweaking the code to make it your own! The project is built with Next.js 14, Tailwind CSS, TypeScript, and MDX, so feel free to customize the components, styles, and content to match your preferences.
 
-First, run the development server:
+## Check Out My Portfolio
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Visit [moncef.net](https://www.moncef.net) to explore the live version of the portfolio. Don't forget to star the repository if you like what you see!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Read My Recent Blogs
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I regularly share insights and knowledge on my blog. Read my latest posts at [moncef.net/blog](https://www.moncef.net/blog).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Contributing
 
-## Learn More
+If you have suggestions, bug reports, or want to contribute, feel free to open an issue or submit a pull request. Your input is highly appreciated!
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Good luck, and happy coding! 🌟
