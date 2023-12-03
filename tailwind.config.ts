@@ -33,6 +33,9 @@ export default {
       ...defaultTheme.screens,
     },
     extend: {
+      listStyleImage: {
+        star: 'url("../../public/list.png")',
+      },
       boxShadow: {
      },
       backgroundImage: {
