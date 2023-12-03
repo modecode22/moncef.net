@@ -80,12 +80,9 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const langPosts =  posts.filter(
     (post) => post.frontmatter.lang === lang
   ) as Project[];
-  await new Promise((resolve, reject) => {
-    resolve(setTimeout(() => {}, 40000));
-  });
   return (
     <>
-      <main className="flex  justify-center flex-wrap py-6 min-h-[60vh]  gap-12 w-full  ">
+      <main className="flex  justify-center items-center flex-wrap py-6 min-h-[60vh]  gap-12 w-full  ">
         {langPosts.map((data) => {
           return <ProjectCard lang={lang} key={data.slug} data={data} />;
         })}
