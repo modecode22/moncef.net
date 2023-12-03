@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     icon: [
       {
         media: '(prefers-color-scheme: light)',
-        url: '/images/light-logo.png',
-        href: '/images/light-logo.png',
+        url: '/light-logo.png',
+        href: '/light-logo.png',
       },
       {
         media: '(prefers-color-scheme: dark)',
-        url: '/images/dark-logo.png',
-        href: '/images/dark-logo.png',
+        url: '/dark-logo.png',
+        href: '/dark-logo.png',
       },
     ],
   },
