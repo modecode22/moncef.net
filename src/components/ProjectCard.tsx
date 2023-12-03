@@ -14,7 +14,7 @@ const ProjectCard = async ({ data, lang }: { data: Project; lang: Locale }) => {
   return (
     <article
       dir={data.frontmatter.lang === "ar" ? "rtl" : "ltr"}
-      className="group flex  flex-col  bg-dark-800 overflow-hidden max-w-lg  w-full  bg-gradient-to-b    duration-75 transition-all  rounded"
+      className="group flex  flex-col h-fit bg-dark-800 overflow-hidden max-w-lg  w-full  bg-gradient-to-b    duration-75 transition-all  rounded"
     >
       <main className="flex flex-col  w-full">
         <div className="relative w-full  overflow-hidden  h-60">
