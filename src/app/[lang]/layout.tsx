@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import { Locale, i18n } from "@/i18n.config";
 import { Tajawal } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-import { getDictionary } from "@/lib/dictionary";
 
 export const metadata: Metadata = {
   title: {
@@ -47,7 +46,7 @@ export const metadata: Metadata = {
         url: `https://www.moncef.net/moncef-letter.png`,
         width: 600,
         height: 500,
-        alt: `image of ${name}`,
+        alt: `image of ${"Moncef Letter"}`,
       },
     ],
     locale: "en-US",
