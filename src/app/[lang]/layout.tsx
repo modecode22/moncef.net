@@ -29,7 +29,7 @@ export default function RootLayout({
   params: { lang: Locale };
 }) {
   return (
-    <html dir={lang === "ar" ? "rtl" : "ltr"} lang={lang}>
+    <html className="scroll-smooth" dir={lang === "ar" ? "rtl" : "ltr"} lang={lang}>
       <body
         className={`bg-dark-900 text-light-500 selection:bg-primary-900/50 selection:backdrop-blur-md selection:text-primary-500 ${
           lang === "ar" ? tajawal.className : GeistSans.className
