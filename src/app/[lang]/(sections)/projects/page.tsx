@@ -80,6 +80,9 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const langPosts =  posts.filter(
     (post) => post.frontmatter.lang === lang
   ) as Project[];
+  await new Promise((resolve, reject) => {
+    resolve(setTimeout(() => {}, 40000));
+  });
   return (
     <>
       <main className="flex  justify-center flex-wrap py-6   gap-12 w-full  ">

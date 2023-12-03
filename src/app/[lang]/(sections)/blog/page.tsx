@@ -9,12 +9,12 @@ import { getDictionary } from "@/lib/dictionary";
 import { Metadata } from "next";
 
 export async function generateMetadata({
-  params: {  lang },
+  params: { lang },
 }: {
-  params: {  lang: Locale };
+  params: { lang: Locale };
 }) {
   const {
-    blog: { name , description},
+    blog: { name, description },
   } = await getDictionary(lang);
   const themetadata: Metadata = {
     description: description,
@@ -62,13 +62,11 @@ export async function generateMetadata({
   return themetadata;
 }
 
-
-
 const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const mdDirectory = path.join(process.cwd(), "public");
-  const files = fs.readdirSync(mdDirectory + "/posts/"+ lang);
+  const files = fs.readdirSync(mdDirectory + "/posts/" + lang);
 
-  const posts =  files.map((fileName) => {
+  const posts = files.map((fileName) => {
     const slug = fileName.replace(".mdx", "");
     const readFile = fs.readFileSync(
       mdDirectory + `/posts/${lang}/${fileName}`,
@@ -80,9 +78,10 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
       frontmatter,
     };
   }) as Article[];
-  const langPosts =  posts.filter(
+  const langPosts = posts.filter(
     (post) => post.frontmatter.lang === lang
   ) as Article[];
+
   return (
     <>
       <main className="flex  justify-center flex-wrap py-6   gap-12 w-full  ">
