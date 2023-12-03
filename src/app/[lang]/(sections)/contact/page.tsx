@@ -1,7 +1,61 @@
 import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
+import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
+export async function generateMetadata({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}) {
+  const {
+    contact: { description, name },
+  } = await getDictionary(lang);
+  const themetadata: Metadata = {
+    description: name,
+    title: description,
+    twitter: {
+      title: description,
+      images: [
+        {
+          url: `https://www.moncef.net/moncef-letter.png`,
+          width: 800,
+          height: 600,
+          alt: `image of ${name}`,
+        },
+        {
+          url: `https://www.moncef.net/moncef-letter.png`,
+          width: 600,
+          height: 500,
+          alt: `image of ${name}`,
+        },
+      ],
+      description: name,
+    },
+    openGraph: {
+      description: name,
+      title: description,
+      url: `https://www.moncef.net/${lang}/contact`,
+      siteName: "moncef.net",
+      images: [
+        {
+          url: `https://www.moncef.net/moncef-letter.png`,
+          width: 800,
+          height: 600,
+        },
+        {
+          url: `https://www.moncef.net/moncef-letter.png`,
+          width: 600,
+          height: 500,
+          alt: `image of ${name}`,
+        },
+      ],
+      locale: lang,
+      type: "website",
+    },
+  };
+  return themetadata;
+}
 
 const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const {
@@ -30,8 +84,6 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
           +213 782 90 3876
         </Link>
       </p>
-
-
     </section>
   );
 };

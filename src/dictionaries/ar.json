@@ -12,6 +12,8 @@
     "contact": "/ar/contact"
   },
   "blog": {
+    "name": "مدونة",
+    "description":"مدونة منصف",
     "this_blog_not_found": {
       "message": "للأسف لا يوجد مقال هنا اذا أردت قراءة مقالاتي"
     },
@@ -21,11 +23,12 @@
   },
   "click_here": "إضغط هنا",
   "project": {
+    "project_name": "مشاريع"  ,
     "title":"نظرة سريعة على مشاريعي الأخيرة",
     "this_project_not_found": {
       "message": "للأسف لا يوجد مشروع هنا اذا أردت رؤية مشاريعي"
     },
-    "started_in": "كتب بيد",
+    "started_in": "بدأ في",
     "project_link": "رابط المشروع",
     "read_more": "اقرأ المزيد"
   },
@@ -53,6 +56,8 @@
     }
   },
   "contact": {
+    "name":"تواصل معي",
+    "description":"جهة اتصل بي ، في موقع منصف",
     "title": "تواصل معي",
     "email_title": "لا تتردد في إرسال بريد إلكتروني لي على:",
     "phone_title": "يمكنك أيضًا الوصول إلي عبر الهاتف على:" },

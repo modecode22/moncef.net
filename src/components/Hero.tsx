@@ -1,8 +1,10 @@
 import React from "react";
 import CustomLink from "./Link";
 import { Locale } from "@/i18n.config";
-import Button from "./ui/Button";
+import Button, { buttonVariants } from "./ui/Button";
 import { getDictionary } from "@/lib/dictionary";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const Hero = async ({ lang }: { lang: Locale }) => {
   const {
@@ -39,8 +41,8 @@ const Hero = async ({ lang }: { lang: Locale }) => {
         {line_5}
         </p>
         <section className="flex gap-4 z-10 relative">
-          <Button variant={"primary-solid"}>{cta.what_i_built}</Button>
-          <Button variant={"dark-ghost"}>{cta.whats_my_skills}</Button>
+          <CustomLink lang={lang} href={'/projects'} className={cn(buttonVariants({variant:"primary-solid"}))}>{cta.what_i_built}</CustomLink>
+          <Link href={'#skills'} className={cn(buttonVariants({variant:"dark-ghost"}))}>{cta.whats_my_skills}</Link>
         </section>
       </main>
 

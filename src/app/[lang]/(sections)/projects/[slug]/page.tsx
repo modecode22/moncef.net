@@ -90,7 +90,7 @@ const page = async ({
       />
     );
   }
-  const { blog } = await getDictionary(source.metadata.lang);
+  const { project } = await getDictionary(source.metadata.lang);
 
   return (
     <main
@@ -105,12 +105,7 @@ const page = async ({
         <h1 className="m-0  pb-3">{source.metadata.title}</h1>
         <div className="flex justify-between flex-col md:flex-row">
           <p className="text-light-900 m-0 w-full">
-            {blog.writed_by}
-            <span className="text-primary-600  font-bold">
-              {" "}
-              {source.metadata.author}{" "}
-            </span>
-            {blog.in}
+            {project.started_in}
             <span className="text-primary-600  font-bold">
               {" "}
               {source.metadata.date}

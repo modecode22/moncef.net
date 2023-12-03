@@ -5,6 +5,65 @@ import path from "path";
 import BlogCard from "@/components/BlogCard";
 import { Article } from "@/types/global";
 import { Locale } from "@/i18n.config";
+import { getDictionary } from "@/lib/dictionary";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params: {  lang },
+}: {
+  params: {  lang: Locale };
+}) {
+  const {
+    blog: { name , description},
+  } = await getDictionary(lang);
+  const themetadata: Metadata = {
+    description: description,
+    title: name,
+    twitter: {
+      title: name,
+      images: [
+        {
+          url: `https://www.moncef.net/moncef-letter.png`,
+          width: 800,
+          height: 600,
+          alt: `image of ${description}`,
+        },
+        {
+          url: `https://www.moncef.net/moncef-letter.png`,
+          width: 600,
+          height: 500,
+          alt: `image of ${description}`,
+        },
+      ],
+      description: description,
+    },
+    openGraph: {
+      description: description,
+      title: name,
+      url: `https://www.moncef.net/${lang}/blog`,
+      siteName: "moncef.net",
+      images: [
+        {
+          url: `https://www.moncef.net/moncef-letter.png`,
+          width: 800,
+          height: 600,
+        },
+        {
+          url: `https://www.moncef.net/moncef-letter.png`,
+          width: 600,
+          height: 500,
+          alt: `image of ${name}`,
+        },
+      ],
+      locale: lang,
+      type: "website",
+    },
+  };
+  return themetadata;
+}
+
+
+
 const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const mdDirectory = path.join(process.cwd(), "public");
   const files = fs.readdirSync(mdDirectory + "/posts/"+ lang);

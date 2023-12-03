@@ -9,7 +9,7 @@ const Skills =async ({ lang }: { lang: Locale }) => {
     skills: { line_1 ,line_2 },
   } = await getDictionary(lang);
   return (
-    <section className="px-6  sm:px-12 md:px-16 lg:px-36 flex flex-col py-24  w-full justify-center  items-center">
+    <section id="skills" className="px-6  sm:px-12 md:px-16 lg:px-36 flex flex-col py-24  w-full justify-center  items-center">
       <header className="max-w-2xl w-full">
         <h1 className="text-start text-4xl mb-3">{line_1}</h1>
         <p className="text-light-900 mb-3">
