@@ -1,4 +1,8 @@
 {
+  "landing":{
+    "name":"Moncef Letter",
+    "description":"Moncef - fullstack developer from Algeria"
+  },
   "navigation": {
     "home": "Home",
     "projects": "Projects",
