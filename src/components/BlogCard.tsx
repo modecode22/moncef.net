@@ -14,7 +14,7 @@ const BlogCard = async ({ data, lang }: { data: Article; lang: Locale }) => {
   return (
     <article
       dir={data.frontmatter.lang === "ar" ? "rtl" : "ltr"}
-      className="group flex   bg-dark-800 overflow-hidden max-w-5xl  w-full  bg-gradient-to-b    duration-75 transition-all  rounded"
+      className="group flex   bg-dark-800 overflow-hidden max-w-5xl  w-full max-h-fit bg-gradient-to-b    duration-75 transition-all  rounded"
     >
       <main className="p-3 h-full flex flex-col justify-between min-w-[50%]">
         <CustomLink lang={lang} href={`/blog/${data.slug}`}>
