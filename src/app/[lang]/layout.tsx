@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Locale, i18n } from "@/i18n.config";
 import { Tajawal } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: {
@@ -29,7 +30,11 @@ export default function RootLayout({
   params: { lang: Locale };
 }) {
   return (
-    <html className="scroll-smooth" dir={lang === "ar" ? "rtl" : "ltr"} lang={lang}>
+    <html
+      className="scroll-smooth"
+      dir={lang === "ar" ? "rtl" : "ltr"}
+      lang={lang}
+    >
       <body
         className={`bg-dark-900 text-light-500 selection:bg-primary-900/50 selection:backdrop-blur-md selection:text-primary-500 ${
           lang === "ar" ? tajawal.className : GeistSans.className
@@ -37,9 +42,10 @@ export default function RootLayout({
       >
         <Header lang={lang} />
         {/* <main className="px-6 pt-10 sm:px-12 md:px-16 lg:px-36"> */}
-          {children}
+        {children}
         {/* </main> */}
         <Footer lang={lang} />
+        <Analytics />
       </body>
     </html>
   );
