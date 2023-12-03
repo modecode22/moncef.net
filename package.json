@@ -47,7 +47,7 @@
     "react-icons": "^4.11.0",
     "react-share": "^5.0.2",
     "remark-gfm": "^4.0.0",
-    "sharp": "^0.33.0",
+    "sharp": "^0.32.0",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.22.4",
