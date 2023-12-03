@@ -18,9 +18,9 @@ const Footer = async ({ lang }: { lang: Locale }) => {
     },
   } = await getDictionary(lang);
   return (
-    <footer className="px-6 pt-16 sm:px-12 md:px-16 lg:px-36">
+    <footer  className="bg-pattern-up mt-20 relative px-6 pt-10 sm:px-12 md:px-16 lg:px-36">
       <div className="flex flex-col items-center border-t border-dark-800 pt-6">
-        <nav className="mb-4 flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
+        <nav className="relative z-10 mb-4 flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
           <CustomLink
             lang={lang}
             href="/"
@@ -51,7 +51,7 @@ const Footer = async ({ lang }: { lang: Locale }) => {
           </CustomLink>
         </nav>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 relative z-10">
           <Link
             href="https://github.com/modecode22"
             target="_blank"
@@ -86,6 +86,8 @@ const Footer = async ({ lang }: { lang: Locale }) => {
       </div>
 
       <div className="py-8 text-center text-sm text-dark-50">{copyright}</div>
+        <div className="absolute  inset-0 w-full h-full  bg-gradient-to-t from-transparent  via-dark-900 to-dark-900"></div>
+   
     </footer>
   );
 };
