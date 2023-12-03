@@ -17,11 +17,15 @@ const BlogCard = async ({ data, lang }: { data: Article; lang: Locale }) => {
       className="group flex   bg-dark-800 overflow-hidden max-w-5xl  w-full  bg-gradient-to-b   h-full  duration-75 transition-all  rounded"
     >
       <main className="p-3  flex flex-col  justify-between min-w-[50%]">
+       <header>
         <CustomLink lang={lang} href={`/blog/${data.slug}`}>
           <h2 className=" line-clamp-4 font-semibold text-xl sm:text-3xl hover:text-primary-500 duration-75 transition-all">
             {data.frontmatter.title}
           </h2>
         </CustomLink>
+        <p className="mt-1 text-light-800 text-sm line-clamp-2">{data.frontmatter.description}</p>
+
+       </header>
         <footer className="w-full flex flex-col  justify-between p-3 ">
           <p className="text-xs font-light text-light-900">
             {blog.writed_by}{" "}
