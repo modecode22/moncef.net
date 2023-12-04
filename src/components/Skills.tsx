@@ -21,7 +21,7 @@ const Skills = async ({ lang }: { lang: Locale }) => {
           <strong className="text-primary-500">{line_2.pc}</strong> {line_2.to_}
         </p>
       </header>
-      <main className="w-full flex flex-wrap gap-2 max-w-2xl">
+      <main className="w-full flex  justify-center flex-wrap gap-2 max-w-2xl">
         {skills.map((skill) => {
           return (
             <div
