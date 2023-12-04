@@ -9,7 +9,7 @@ const BlogImage = async ({ src, alt }: { src: string; alt: string }) => {
       <Image
         src={src}
         alt={alt}
-        style={{ width: "100%", height: "500px" }}
+        style={{ width: "100%" }}
         placeholder="blur"
         blurDataURL={myBlurDataUrl}
         width={800}
