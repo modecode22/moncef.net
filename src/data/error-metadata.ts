@@ -26,7 +26,7 @@ export const errorMetadata = (message:string, lang:Locale) :Metadata=>{
         openGraph: {
           description: `Oops! ${message} . We apologize for the inconvenience.`,
           title: "Error",
-          url: "https://www.yourwebsite.com/error",
+          url: "https://www.moncef.net/error",
           siteName: "moncef.net",
           images: [
             {
