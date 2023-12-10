@@ -6,4 +6,10 @@ const dictionaries = {
   ar: () => import('@/dictionaries/ar.json').then(module => module.default)
 }
 
-export const getDictionary = async (locale: Locale) => dictionaries[locale]()
+export const getDictionary = async (locale: Locale) => {
+  if (locale in dictionaries) {
+    return dictionaries[locale]();
+  } else {
+    throw new Error(`Locale '${locale}' is not supported.`);
+  }
+};
