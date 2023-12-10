@@ -5,29 +5,32 @@ const URL = "https://moncef.net";
 
 export default async function sitemap() {
   const mdDirectory = path.join(process.cwd(), "public");
-  const ar_blogFiles = fs.readdirSync(mdDirectory + "/posts/ar/");
-  const blogFiles = fs.readdirSync(mdDirectory + "/posts/en/");
-  const projectsFiles = fs.readdirSync(mdDirectory + "/projects/en/");
-  const ar_projectsFiles = fs.readdirSync(mdDirectory + "/projects/ar/");
-  const ar_posts = ar_blogFiles.map((fileName) => {
+  const ar_blogFiles =  fs.readdirSync(mdDirectory + "/posts/ar");
+  const blogFiles =  fs.readdirSync(mdDirectory + "/posts/en");
+  const projectsFiles =  fs.readdirSync(mdDirectory + "/projects/en");
+  const ar_projectsFiles =  fs.readdirSync(mdDirectory + "/projects/ar");
+
+  const ar_posts =  ar_blogFiles.map((fileName) => {
     const slug = fileName.replace(".mdx", "");
-    const readFile = fs.readFileSync(
+    const readFile =  fs.readFileSync(
       mdDirectory + `/posts/ar/${fileName}`,
       "utf-8"
     );
-    const { data: frontmatter } = matter(readFile);
+    const { data: frontmatter } =  matter(readFile);
 
     return {
       url: `${URL}/ar/blog/${slug}`,
       lastModified: new Date(frontmatter.date).toISOString(),
     };
   });
+
   const posts = blogFiles.map((fileName) => {
     const slug = fileName.replace(".mdx", "");
     const readFile = fs.readFileSync(
       mdDirectory + `/posts/en/${fileName}`,
       "utf-8"
     );
+    
     const { data: frontmatter } = matter(readFile);
 
     return {
@@ -35,6 +38,7 @@ export default async function sitemap() {
       lastModified: new Date(frontmatter.date).toISOString(),
     };
   });
+
   const ar_projects = ar_projectsFiles.map((fileName) => {
     const slug = fileName.replace(".mdx", "");
     const readFile = fs.readFileSync(
@@ -42,12 +46,14 @@ export default async function sitemap() {
       "utf-8"
     );
     const { data: frontmatter } = matter(readFile);
+console.log(frontmatter.date,'thisis the new');
 
     return {
       url: `${URL}/ar/projects/${slug}`,
-      lastModified: new Date(frontmatter.date).toISOString(),
+      lastModified: new Date().toISOString(),
     };
   });
+
   const projects = projectsFiles.map((fileName) => {
     const slug = fileName.replace(".mdx", "");
     const readFile = fs.readFileSync(
@@ -55,10 +61,11 @@ export default async function sitemap() {
       "utf-8"
     );
     const { data: frontmatter } = matter(readFile);
+console.log(frontmatter.date);
 
     return {
       url: `${URL}/projects/${slug}`,
-      lastModified: new Date(frontmatter.date).toISOString(),
+      lastModified: new Date().toISOString(),
     };
   });
 
@@ -66,6 +73,7 @@ export default async function sitemap() {
     url: `${URL}/ar${route}`,
     lastModified: new Date().toISOString(),
   }));
+
   const routes = ["", "/blog", "/contact", "/projects"].map((route) => ({
     url: `${URL}${route}`,
     lastModified: new Date().toISOString(),
