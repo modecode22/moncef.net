@@ -5,8 +5,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Locale, i18n } from "@/i18n.config";
 import { Tajawal } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
+// import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 export const metadata: Metadata = {
   title: {
     template: "%s | Moncef Letter",
@@ -44,7 +45,7 @@ export default function RootLayout({
         <Header lang={lang} />
         {children}
         <Footer lang={lang} />
-        <Analytics />
+        <GoogleAnalytics />
         <SpeedInsights/>
       </body>
     </html>
